@@ -1,0 +1,24 @@
+import urllib.request
+
+def download_file(url, filename):
+    try:
+        print(f"Downloading {filename}...")
+        urllib.request.urlretrieve(url, filename)
+        print(f"{filename} downloaded successfully.")
+    except Exception as e:
+        print(f"Failed to download {filename}. Error: {e}")
+
+# URLs for YOLOv3 weights and config files
+weights_url = "https://pjreddie.com/media/files/yolov3.weights"
+config_url = "https://raw.githubusercontent.com/pjreddie/darknet/master/cfg/yolov3.cfg"
+names_url = "https://raw.githubusercontent.com/pjreddie/darknet/master/data/coco.names"
+
+# Filenames for the downloaded files
+weights_filename = "yolov3.weights"
+config_filename = "yolov3.cfg"
+names_filename = "coco.names"
+
+# Download the files
+download_file(weights_url, weights_filename)
+download_file(config_url, config_filename)
+download_file(names_url, names_filename)
