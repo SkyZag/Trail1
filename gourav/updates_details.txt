@@ -1,0 +1,3 @@
+day-1 
+1. i have got a lead for the maps that is by using geolocation API directly in the html code
+2. my old program has been refined to get one file and return the trash classification of the detected object

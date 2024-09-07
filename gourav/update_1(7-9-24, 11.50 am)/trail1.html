@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Location Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Your Location on the Map</h3>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map with a default view
+        var map = L.map('map').setView([20.5937, 78.9629], 5); // Default to the center of India
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Get user's location
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var lat = position.coords.latitude;
+                var lon = position.coords.longitude;
+
+                // Set the map view to user's location
+                map.setView([lat, lon], 13);
+
+                // Add a yellow marker at the user's location
+                var marker = L.marker([lat, lon], {
+                    icon: L.icon({
+                        iconUrl: 'https://www.google.com/mapfiles/marker_yellow.png',
+                        iconSize: [32, 32], // size of the icon
+                        iconAnchor: [16, 32], // point of the icon which will correspond to marker's location
+                    })
+                }).addTo(map);
+
+                // Add a popup to the marker
+                marker.bindPopup("You are here!").openPopup();
+            }, function() {
+                alert("Geolocation failed. Unable to retrieve your location.");
+            });
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    </script>
+</body>
+</html>
