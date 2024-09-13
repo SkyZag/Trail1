@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Upon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="https://www.sih.gov.in/img1/logo/SIH_logo_2024_horizontal.png" alt="Smart India Hackathon 2024 Logo">
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li>&#9679;</li>
+                    <li><a href="#">Camera</a></li>
+                    <li>&#9679;</li>
+                    <li><a href="#">Map</a></li>
+                    <li>&#9679;</li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li>&#9679;</li>
+                </ul>
+            </nav>
+            <div class="contact-info">
+                <a href="#" class="contact-button">Contact NGO's</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Solution for waste segregation, disposal and further process with minimum human interventions.</h2>
+        </div>
+    </section>
+
+    <!-- Highlight Section -->
+    <div class="hero-highlight">
+        <h3 class="highlight">Team Nirvana  |  2024</h3>
+        <div class="underline"></div> <!-- White line below the text -->
+    </div>
+
+    <!-- Camera Section -->
+    <section class="camera-section">
+        <button id="cameraButton">Enable Camera</button>
+        <div class="camera-wrapper">
+            <video id="camera" autoplay playsinline></video>
+        </div>
+    </section>
+
+    <!-- Quotes Section -->
+    <div class="quotes">
+        <blockquote>
+            <q>You may shoot me with your words, You may cut me with your eyes, You may kill me with your hatefulness, But still, like air, I'll rise.</q>
+            <p>&mdash; Maya Angelou</p>
+        </blockquote>
+        <blockquote>
+            <q>Success is not final, failure is not fatal: It is the courage to continue that counts.</q>
+            <p>&mdash; Winston S. Churchill</p>
+        </blockquote>
+        <blockquote>
+            <q>Do not watch the clock. Do what it does. Keep going.</q>
+            <p>&mdash; Sam Levenson</p>
+        </blockquote>
+        <!-- New Section for White Line and MAP Heading -->
+    <div class="quotes-footer">
+        <div class="underline"></div> <!-- White line -->
+    </div>
+
+    <section class="map-section">
+        <h2 class="map-heading">MAP</h2> <!-- MAP heading -->
+        <div id="map" class="map-container"> <!-- Placeholder for map -->
+            <!-- Actual map embedding or initialization will go here -->
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Team Nirvana. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Camera Access -->
+    <script>
+        document.getElementById('cameraButton').addEventListener('click', function () {
+            const video = document.getElementById('camera');
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({ video: true }).then(function (stream) {
+                    video.srcObject = stream;
+                }).catch(function (error) {
+                    console.error("Error accessing the camera:", error);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

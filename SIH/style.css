@@ -1,0 +1,395 @@
+/* Reset and Basic Styles */
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Body Styles - Gradient Background */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #0cc0df, #ffde59);
+    color: white;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Header Styles */
+.header {
+    background-color: rgba(255, 255, 255, 0.1); /* Slight transparency for header */
+    padding: 10px 0;
+    border-bottom: 1px solid #ffffff; /* White colored horizontal line */
+    animation: fadeInDown 1s ease-in-out; /* Fade-in animation for the header */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    width: 200px; /* Adjust logo size */
+    margin-right: 10px;
+    background-color: white; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 5px; /* Add some padding to separate the image from the border */
+    transition: transform 0.3s ease; /* Add smooth transition for hover effect */
+}
+
+.logo img:hover {
+    transform: scale(1.1); /* Enlarge the logo on hover */
+}
+
+/* Navigation Bar Styles */
+.navbar ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    margin-right: 10px; /* Space between menu items */
+    position: relative; /* Required for positioning the hover effect */
+}
+
+.navbar ul li + li {
+    margin-right: 10px; /* Space after bullet symbols */
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+
+.navbar ul li a:hover {
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.05);
+}
+
+/* Contact Info Styles */
+.contact-info {
+    display: flex;
+    align-items: center;
+}
+
+.contact-button {
+    background-color: #A73FE8;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #A73FE8;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #FFFFFF;
+    color: #A73FE8;
+    transform: scale(1.1);
+}
+
+/* Hero Section Styles */
+.hero {
+    position: relative;
+    background-image: url('https://img.freepik.com/free-vector/waste-sorting-concept_74855-7934.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0;
+    text-align: center;
+    color: white;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.hero-content {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    animation: fadeInLeft 1.5s ease;
+}
+
+.hero-content h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.hero-content h2:hover {
+    color: #FFD700;
+}
+
+/* New styles for the highlighted text */
+.hero-highlight {
+    text-align: center;
+    margin-top: 20px; /* Margin at the top to separate it from the hero section */
+    animation: fadeIn 2s ease; /* Fade-in animation for the highlighted text */
+}
+
+.hero-highlight .highlight {
+    color: #FFD700;
+    font-weight: bold;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.hero-highlight .highlight:hover {
+    color: #A73FE8;
+}
+
+/* White Line Below Highlight */
+.underline {
+    width: 60%;
+    height: 2px;
+    background-color: white;
+    margin: 20px auto 0; /* 20px space after the "Team Nirvana | 2024" text */
+}
+
+/* Camera Section Styles */
+.camera-section {
+    margin: 20px auto; /* 20px space after the underline */
+    text-align: center;
+}
+
+#cameraButton {
+    background-color: #A73FE8;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#cameraButton:hover {
+    background-color: #FFFFFF;
+    color: #A73FE8;
+}
+
+.camera-wrapper {
+    display: inline-block; /* Ensure wrapper size fits the camera */
+    border: 5px solid white; /* White thick border */
+    border-radius: 15px; /* Rounded corners */
+    padding: 5px; /* Space between border and video */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional shadow for better visibility */
+    background-color: rgba(0, 0, 0, 0.3); /* Slight background for better contrast */
+}
+
+#camera {
+    width: 100%;
+    max-width: 300px; /* Reduced maximum width of the video element */
+    border-radius: 10px; /* Rounded corners for video element */
+}
+
+/* Quote Box Styles */
+.quotes blockquote {
+    padding: 20px; /* Padding inside the quote box */
+    margin: 20px auto; /* Consistent gap of 20px between boxes */
+    background-color: #fff;
+    color: #333;
+    box-shadow: 
+        inset 0 -3em 3em rgba(0, 200, 0, 0.3),
+        0 0 0 2px white,
+        0.3em 0.3em 1em rgba(200, 0, 0, 0.6);
+    border-radius: 8px;
+    text-align: center;
+    max-width: 600px; /* Maximum width for larger screens */
+}
+
+/* New Section for White Line and MAP Heading */
+.quotes-footer {
+    text-align: center; /* Center align footer elements */
+    margin: 20px 0; /* 20px space above and below */
+}
+
+.underline {
+    width: 60%; /* Adjusted length for the underline */
+    height: 2px;
+    background-color: white;
+    margin: 0 auto; /* Centered underline */
+}
+
+/* Map Section */
+.map-section {
+    text-align: center; /* Center-align map heading and map container */
+    margin: 40px 0; /* Top and bottom margins */
+}
+
+.map-heading {
+    font-size: 24px; /* Size of the MAP heading */
+    color: white; /* Heading color */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.map-container {
+    width: 100%;
+    max-width: 800px; /* Max width for large screens */
+    height: 600px; /* Fixed height for the map area */
+    margin: 0 auto; /* Center align the map container */
+    background-color: #f0f0f0; /* Light background color for visualization */
+    border: 2px solid white; /* White border around the map */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensure content fits within the container */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    animation: fadeIn 2s ease;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo img {
+        width: 120px; /* Adjust logo size for smaller screens */
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px; /* Reduce space between menu items */
+    }
+
+    .navbar ul li {
+        margin-right: 0;
+    }
+
+    .hero-content {
+        margin: 0 auto;
+        padding: 15px;
+    }
+
+    .hero-content h2 {
+        font-size: 24px;
+    }
+
+    .hero-highlight .highlight {
+        font-size: 20px;
+    }
+
+    .camera-wrapper {
+        border-width: 3px; /* Thinner border for smaller screens */
+        padding: 3px; /* Less padding around the camera */
+    }
+
+    #camera {
+        max-width: 250px; /* Further reduce maximum width for smaller screens */
+    }
+
+    .quotes blockquote {
+       
+        max-width: 90%; /* Adjusted width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .logo img {
+        width: 100px; /* Further adjust logo size for very small screens */
+    }
+
+    .navbar ul {
+        gap: 5px; /* Further reduce space between menu items */
+    }
+
+    .hero-content {
+        padding: 10px;
+    }
+
+    .hero-content h2 {
+        font-size: 20px;
+    }
+
+    .hero-highlight .highlight {
+        font-size: 18px;
+    }
+
+    .camera-wrapper {
+        border-width: 2px; /* Even thinner border for very small screens */
+        padding: 2px; /* Minimal padding around the camera */
+    }
+
+    #camera {
+        max-width: 200px; /* Further reduce maximum width for very small screens */
+    }
+
+    .quotes blockquote {
+       
+        max-width: 100%; /* Full width on very small screens */
+    }
+
+    .footer p {
+        font-size: 12px; /* Smaller font size for footer text */
+    }
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
